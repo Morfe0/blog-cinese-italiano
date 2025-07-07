@@ -43,6 +43,114 @@
     </div>
     
     
+    
+    
+    <div style="margin: 40px 0;">
+        <h3>词汇表 / Tabella del vocabolario</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">汉字<br><small>Carattere</small></th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">拼音<br><small>Pinyin</small></th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">意大利语<br><small>Italiano</small></th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">例句<br><small>Esempio</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">编程</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">biānchéng</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">programmazione</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            我正在学习编程。/ Sto imparando la programmazione.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">学习</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">xuéxí</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">apprendimento</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            学习需要时间和耐心。/ L&#39;apprendimento richiede tempo e pazienza.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">语言</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">yǔyán</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">lingua</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            中文是一门美丽的语言。/ Il cinese è una lingua bellissima.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">项目</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">xiàngmù</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">progetto</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            这个项目很有趣。/ Questo progetto è molto interessante.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">逻辑</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">luójí</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">logica</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            编程需要清晰的逻辑。/ La programmazione richiede una logica chiara.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">知识</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">zhīshi</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">conoscenza</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            分享知识很重要。/ Condividere la conoscenza è importante.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">技能</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">jìnéng</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">competenza</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            编程是一项有用的技能。/ La programmazione è una competenza utile.
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">思维</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">sīwéi</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">pensiero</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            编程改变了我的思维方式。/ La programmazione ha cambiato il mio modo di pensare.
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+
     <div class="buttons">
         
         <button id="lang-toggle" onclick="toggleLanguage()">
@@ -133,7 +241,8 @@ const flashcardsData = [
         "id":  0 ,
         "zh": "编程",
         "it": "programmazione",
-        "pinyin": "biānchéng"
+        "pinyin": "biānchéng",
+        "example": "我正在学习编程。\/ Sto imparando la programmazione."
     }
     
     ,
@@ -141,7 +250,8 @@ const flashcardsData = [
         "id":  1 ,
         "zh": "学习",
         "it": "apprendimento",
-        "pinyin": "xuéxí"
+        "pinyin": "xuéxí",
+        "example": "学习需要时间和耐心。\/ L\u0027apprendimento richiede tempo e pazienza."
     }
     
     ,
@@ -149,7 +259,8 @@ const flashcardsData = [
         "id":  2 ,
         "zh": "语言",
         "it": "lingua",
-        "pinyin": "yǔyán"
+        "pinyin": "yǔyán",
+        "example": "中文是一门美丽的语言。\/ Il cinese è una lingua bellissima."
     }
     
     ,
@@ -157,7 +268,8 @@ const flashcardsData = [
         "id":  3 ,
         "zh": "项目",
         "it": "progetto",
-        "pinyin": "xiàngmù"
+        "pinyin": "xiàngmù",
+        "example": "这个项目很有趣。\/ Questo progetto è molto interessante."
     }
     
     ,
@@ -165,7 +277,8 @@ const flashcardsData = [
         "id":  4 ,
         "zh": "逻辑",
         "it": "logica",
-        "pinyin": "luójí"
+        "pinyin": "luójí",
+        "example": "编程需要清晰的逻辑。\/ La programmazione richiede una logica chiara."
     }
     
     ,
@@ -173,7 +286,8 @@ const flashcardsData = [
         "id":  5 ,
         "zh": "知识",
         "it": "conoscenza",
-        "pinyin": "zhīshi"
+        "pinyin": "zhīshi",
+        "example": "分享知识很重要。\/ Condividere la conoscenza è importante."
     }
     
     ,
@@ -181,7 +295,8 @@ const flashcardsData = [
         "id":  6 ,
         "zh": "技能",
         "it": "competenza",
-        "pinyin": "jìnéng"
+        "pinyin": "jìnéng",
+        "example": "编程是一项有用的技能。\/ La programmazione è una competenza utile."
     }
     
     ,
@@ -189,7 +304,8 @@ const flashcardsData = [
         "id":  7 ,
         "zh": "思维",
         "it": "pensiero",
-        "pinyin": "sīwéi"
+        "pinyin": "sīwéi",
+        "example": "编程改变了我的思维方式。\/ La programmazione ha cambiato il mio modo di pensare."
     }
     
 ];

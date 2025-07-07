@@ -18,11 +18,13 @@
                 href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>http://localhost:1313/esempio-post/</loc>
+    <loc>http://localhost:1313/posts/esempio-post/</loc>
     <lastmod>2024-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/primo-post/</loc>
     <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
@@ -47,7 +49,5 @@
                 hreflang="zh"
                 href="http://localhost:1313/tags/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
   </url>
 </urlset>

@@ -62,6 +62,73 @@
     <h2>练习卡片 / Flashcards</h2>
     
     
+    <div style="margin-bottom: 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="margin: 0;">词汇表 / Tabella del vocabolario</h3>
+            <button onclick="toggleVocabTable()" id="vocab-toggle-btn" style="font-size: 14px; padding: 5px 10px;">
+                隐藏 / Nascondi
+            </button>
+        </div>
+        <table id="vocab-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f5f5f5;">
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">汉字<br><small>Carattere</small></th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">拼音<br><small>Pinyin</small></th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">意大利语<br><small>Italiano</small></th>
+                    <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">例句<br><small>Esempio</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">编程</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">biānchéng</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">programmazione</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            <span style="color: #999;">-</span>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">学习</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">xuéxí</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">apprendimento</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            <span style="color: #999;">-</span>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">语言</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">yǔyán</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">lingua</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            <span style="color: #999;">-</span>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 20px;">项目</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">xiàngmù</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">progetto</td>
+                    <td style="border: 1px solid #ddd; padding: 10px; font-size: 14px;">
+                        
+                            <span style="color: #999;">-</span>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+    
     <div style="text-align: center; margin-bottom: 20px; color: #666;">
         <span id="session-stats">进度 Sessione: 0 正确 corrette, 0 错误 sbagliate</span>
     </div>
@@ -131,7 +198,8 @@ const flashcardsData = [
         "id":  0 ,
         "zh": "编程",
         "it": "programmazione",
-        "pinyin": "biānchéng"
+        "pinyin": "biānchéng",
+        "example": ""
     }
     
     ,
@@ -139,7 +207,8 @@ const flashcardsData = [
         "id":  1 ,
         "zh": "学习",
         "it": "apprendimento",
-        "pinyin": "xuéxí"
+        "pinyin": "xuéxí",
+        "example": ""
     }
     
     ,
@@ -147,7 +216,8 @@ const flashcardsData = [
         "id":  2 ,
         "zh": "语言",
         "it": "lingua",
-        "pinyin": "yǔyán"
+        "pinyin": "yǔyán",
+        "example": ""
     }
     
     ,
@@ -155,7 +225,8 @@ const flashcardsData = [
         "id":  3 ,
         "zh": "项目",
         "it": "progetto",
-        "pinyin": "xiàngmù"
+        "pinyin": "xiàngmù",
+        "example": ""
     }
     
 ];
@@ -371,6 +442,19 @@ function toggleLanguage() {
             itContent.style.display = 'block';
             btn.textContent = '中文版本';
         }
+    }
+}
+
+function toggleVocabTable() {
+    const table = document.getElementById('vocab-table');
+    const btn = document.getElementById('vocab-toggle-btn');
+    
+    if (table.style.display === 'none') {
+        table.style.display = 'table';
+        btn.textContent = '隐藏 / Nascondi';
+    } else {
+        table.style.display = 'none';
+        btn.textContent = '显示 / Mostra';
     }
 }
 </script>

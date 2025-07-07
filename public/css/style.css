@@ -117,7 +117,23 @@ p {
 }
 
 .post-content p {
-    text-align: justify;
+    text-align: left;
+    line-height: 1.65;
+}
+
+/* Stili per About e testi lunghi */
+article p {
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+}
+
+/* Link lunghi */
+article a {
+    word-break: break-all;
 }
 
 /* Bottoni */
@@ -246,6 +262,28 @@ button.primary:hover {
     
     button {
         margin-bottom: 10px;
+    }
+    
+    /* Tabella responsive */
+    table {
+        font-size: 14px;
+    }
+    
+    table th,
+    table td {
+        padding: 8px !important;
+    }
+    
+    table td:nth-child(1) {
+        font-size: 18px !important;
+    }
+    
+    /* Nascondi colonna esempio su schermi molto piccoli */
+    @media (max-width: 500px) {
+        table th:nth-child(4),
+        table td:nth-child(4) {
+            display: none;
+        }
     }
 }
 /* Bottoni flashcard bilingui */

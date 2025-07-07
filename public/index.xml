@@ -6,28 +6,21 @@
     <description>Recent content on 随想</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 20 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>学习编程的心得</title>
-      <link>http://localhost:1313/posts/esempio-post/</link>
-      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/esempio-post/</guid>
-      <description>&lt;p&gt;在学习编程的过程中，我发现最重要的不是记住所有的语法，而是理解背后的逻辑。&lt;/p&gt;&#xA;&lt;p&gt;每天写代码就像学习一门新语言一样，需要不断地练习和思考。我最喜欢的编程语言是JavaScript，因为它既简单又强大。&lt;/p&gt;&#xA;&lt;p&gt;通过构建实际的项目，我学到了很多实用的技能。分享知识是学习的最好方式之一。当你能够向别人解释一个概念时，说明你真正理解了它。&lt;/p&gt;&#xA;&lt;p&gt;编程不仅仅是一项技术，更是一种思维方式。它教会我们如何分解问题，如何系统地思考，如何不断优化和改进。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>学习编程的心得</title>
-      <link>http://localhost:1313/posts/primo-post/</link>
-      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/primo-post/</guid>
-      <description>&lt;p&gt;在学习编程的过程中，我发现最重要的不是记住所有的语法，而是理解背后的逻辑。&lt;/p&gt;&#xA;&lt;p&gt;每天写代码就像学习一门新语言一样，需要不断地练习和思考。我最喜欢的编程语言是JavaScript，因为它既简单又强大。&lt;/p&gt;&#xA;&lt;p&gt;通过构建实际的项目，我学到了很多实用的技能。分享知识是学习的最好方式之一。&lt;/p&gt;</description>
+      <title>第十六课 - 作业</title>
+      <link>http://localhost:1313/posts/lezione-16-post/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/lezione-16-post/</guid>
+      <description>&lt;p&gt;第十六课的作业来了！&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;关于我--chi-sono&#34;&gt;关于我 / Chi sono&lt;/h2&gt;&#xA;&lt;h3 id=&#34;中文&#34;&gt;中文&lt;/h3&gt;&#xA;&lt;p&gt;你好！我是一个对语言和技术充满热情的开发者&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;italiano&#34;&gt;Italiano&lt;/h3&gt;&#xA;&lt;p&gt;Ciao! Sono uno sviluppatore appssssassionato&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;关于我--chi-sono&#34;&gt;关于我 / Chi sono&lt;/h2&gt;&#xA;&lt;h3 id=&#34;中文&#34;&gt;中文&lt;/h3&gt;&#xA;&lt;p&gt;好的，大家好！&lt;/p&gt;&#xA;&lt;p&gt;关于我，我能说些什么呢？就从我们介绍自己时常说起的事情开始吧——我的工作。我是一名软件开发人员，更具体地说，我是一名后端开发人员。&lt;/p&gt;&#xA;&lt;p&gt;好了，客套话就不多说了。要回答“我是谁”这个问题其实挺难的。和所有人一样，我也有自己的矛盾之处，所以没有一个可以概括一切的答案。但这没关系，我认为生活就像一个拼图，每一次的经历都会给我们一小块拼图，帮助我们更好地了解自己。&lt;/p&gt;&#xA;&lt;p&gt;如果大家有任何有趣的工作机会或想法，随时欢迎联系我。我总是乐于探索和讨论。&lt;/p&gt;&#xA;&lt;p&gt;联系方式:&lt;br&gt;&#xA;&lt;a href=&#34;https://www.linkedin.com/in/erick-calabro/&#34;&gt;https://www.linkedin.com/in/erick-calabro/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;italiano&#34;&gt;Italiano&lt;/h3&gt;&#xA;&lt;p&gt;Ok eccoci qui, cosa posso dirvi su di me? Partirei con le cose che diciamo tutti quando parliamo di noi stessi, il lavoro, sono uno sviluppatore software, per la precisione lavoro come backend developer&lt;/p&gt;&#xA;&lt;p&gt;Ora che ci siamo tolti i convenevoli chi sono è una domanda difficile a cui rispondere, come tutti gli esseri umani ho le mie contraddizioni ed una risposta univoca che racchiuda tutto non la ho, ma non è un problema, penso che la vita sia come un puzzle ed ogni esperienza ci dà un piccolo pezzo che possa aiutarci a capire&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
