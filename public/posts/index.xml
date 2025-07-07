@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 随想</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 随想</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 20 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习编程的心得</title>
+      <link>http://localhost:1313/posts/primo-post/</link>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/primo-post/</guid>
+      <description>&lt;p&gt;在学习编程的过程中，我发现最重要的不是记住所有的语法，而是理解背后的逻辑。&lt;/p&gt;&#xA;&lt;p&gt;每天写代码就像学习一门新语言一样，需要不断地练习和思考。我最喜欢的编程语言是JavaScript，因为它既简单又强大。&lt;/p&gt;&#xA;&lt;p&gt;通过构建实际的项目，我学到了很多实用的技能。分享知识是学习的最好方式之一。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习编程的心得 - 随想</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="site-title">随想</h1>
+        <p class="site-subtitle">pensieri sparsi</p>
+        
+        <nav class="nav">
+            <a href="/" >Home</a>
+            <a href="/about" >About</a>
+        </nav>
+    </header>
+
+    <main>
+        
+<article>
+    <div class="post-date">2024-01-20</div>
+    <h1>学习编程的心得</h1>
+    
+    
+    <div id="content-zh" class="post-content">
+        <p>在学习编程的过程中，我发现最重要的不是记住所有的语法，而是理解背后的逻辑。</p>
+<p>每天写代码就像学习一门新语言一样，需要不断地练习和思考。我最喜欢的编程语言是JavaScript，因为它既简单又强大。</p>
+<p>通过构建实际的项目，我学到了很多实用的技能。分享知识是学习的最好方式之一。当你能够向别人解释一个概念时，说明你真正理解了它。</p>
+<p>编程不仅仅是一项技术，更是一种思维方式。它教会我们如何分解问题，如何系统地思考，如何不断优化和改进。</p>
+
+    </div>
+    
+    
+    
+    <div id="content-it" class="post-content" style="display: none;">
+        <p>Nel processo di apprendimento della programmazione, ho scoperto che la cosa più importante non è memorizzare tutta la sintassi, ma comprendere la logica sottostante.</p>
+<p>Scrivere codice ogni giorno è come imparare una nuova lingua, richiede pratica e riflessione costanti. Il mio linguaggio di programmazione preferito è JavaScript, perché è sia semplice che potente.</p>
+<p>Costruendo progetti reali, ho acquisito molte competenze pratiche. Condividere la conoscenza è uno dei modi migliori per imparare. Quando riesci a spiegare un concetto a qualcun altro, significa che lo hai veramente compreso.</p>
+<p>La programmazione non è solo una competenza tecnica, ma un modo di pensare. Ci insegna come scomporre i problemi, come pensare sistematicamente, come ottimizzare e migliorare continuamente.</p>
+
+    </div>
+    
+    
+    <div class="buttons">
+        
+        <button id="lang-toggle" onclick="toggleLanguage()">
+            Versione italiana
+        </button>
+        
+        
+        
+        <button class="primary" onclick="showFlashcards()">
+            练习单词 / Pratica vocabolario
+        </button>
+        
+    </div>
+</article>
+
+
+
+<div id="flashcards-section" style="display: none; margin-top: 60px;">
+    <h2>练习卡片 / Flashcards</h2>
+    
+    
+    <div style="text-align: center; margin-bottom: 20px; color: #666;">
+        <span id="session-stats">进度 Sessione: 0 正确 corrette, 0 错误 sbagliate</span>
+    </div>
+    
+    <div class="language-toggle">
+        <span>学习 Studia: </span>
+        <span id="study-zh" class="active" onclick="setStudyLanguage('zh')">中文</span>
+        <span id="study-it" onclick="setStudyLanguage('it')">Italiano</span>
+    </div>
+
+    <div class="flashcard-container">
+        <div id="flashcard" class="flashcard">
+            <div class="flashcard-face">
+                <div id="card-front-text" class="flashcard-text"></div>
+            </div>
+            <div class="flashcard-face flashcard-back">
+                <div id="card-back-text" class="flashcard-text"></div>
+                <div id="card-pinyin-back" class="flashcard-pinyin"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="primary" onclick="flipCard()" id="flip-btn">
+            显示答案 / Mostra risposta
+        </button>
+    </div>
+    
+    
+    <div id="rating-buttons" style="display: none; text-align: center; margin-top: 20px;">
+        <p style="margin-bottom: 15px; color: #666;">怎么样？ Come è andata?</p>
+        <button onclick="rateCard(1)" style="background: #ef4444; color: white; border-color: #ef4444; padding: 10px 15px;">
+            😕 不记得<br><small>Non ricordato</small>
+        </button>
+        <button onclick="rateCard(3)" style="background: #f59e0b; color: white; border-color: #f59e0b; margin: 0 10px; padding: 10px 15px;">
+            🤔 困难<br><small>Difficile</small>
+        </button>
+        <button onclick="rateCard(5)" style="background: #10b981; color: white; border-color: #10b981; padding: 10px 15px;">
+            😊 容易<br><small>Facile</small>
+        </button>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <div style="margin-bottom: 10px;">
+            <span id="cards-remaining">剩余卡片 Carte rimanenti: 0</span>
+        </div>
+        <div style="width: 100%; background: #e5e5e5; height: 8px; border-radius: 4px;">
+            <div id="progress-bar" style="width: 0%; background: #667eea; height: 100%; border-radius: 4px; transition: width 0.3s;"></div>
+        </div>
+    </div>
+    
+    
+    <div id="completion-message" style="display: none; text-align: center; margin-top: 30px;">
+        <h3>🎉 完成！Sessione completata!</h3>
+        <p id="final-stats" style="margin: 20px 0;"></p>
+        <button class="primary" onclick="resetSession()">重新开始 / Ricomincia</button>
+    </div>
+</div>
+
+<script>
+
+const postId = "350dea2d60b94b71cf7ed76e8d5e0ccb";
+const flashcardsData = [
+    
+    
+    {
+        "id":  0 ,
+        "zh": "编程",
+        "it": "programmazione",
+        "pinyin": "biānchéng"
+    }
+    
+    ,
+    {
+        "id":  1 ,
+        "zh": "学习",
+        "it": "apprendimento",
+        "pinyin": "xuéxí"
+    }
+    
+    ,
+    {
+        "id":  2 ,
+        "zh": "语言",
+        "it": "lingua",
+        "pinyin": "yǔyán"
+    }
+    
+    ,
+    {
+        "id":  3 ,
+        "zh": "项目",
+        "it": "progetto",
+        "pinyin": "xiàngmù"
+    }
+    
+    ,
+    {
+        "id":  4 ,
+        "zh": "逻辑",
+        "it": "logica",
+        "pinyin": "luójí"
+    }
+    
+    ,
+    {
+        "id":  5 ,
+        "zh": "知识",
+        "it": "conoscenza",
+        "pinyin": "zhīshi"
+    }
+    
+    ,
+    {
+        "id":  6 ,
+        "zh": "技能",
+        "it": "competenza",
+        "pinyin": "jìnéng"
+    }
+    
+    ,
+    {
+        "id":  7 ,
+        "zh": "思维",
+        "it": "pensiero",
+        "pinyin": "sīwéi"
+    }
+    
+];
+
+let studyingChinese = true;
+let currentCardIndex = 0;
+let isFlipped = false;
+let sessionStats = { correct: 0, incorrect: 0 };
+let cardQueue = [];
+let cardProgress = {};
+
+
+function loadProgress() {
+    const saved = localStorage.getItem(`flashcards_${postId}`);
+    if (saved) {
+        cardProgress = JSON.parse(saved);
+    } else {
+        
+        flashcardsData.forEach(card => {
+            cardProgress[card.id] = {
+                interval: 1,
+                repetitions: 0,
+                easeFactor: 2.5,
+                nextReview: new Date().toISOString()
+            };
+        });
+    }
+}
+
+
+function saveProgress() {
+    localStorage.setItem(`flashcards_${postId}`, JSON.stringify(cardProgress));
+}
+
+
+function updateCardProgress(cardId, quality) {
+    const progress = cardProgress[cardId];
+    
+    if (quality < 3) {
+        progress.repetitions = 0;
+        progress.interval = 1;
+    } else {
+        progress.repetitions += 1;
+        
+        if (progress.repetitions === 1) {
+            progress.interval = 1;
+        } else if (progress.repetitions === 2) {
+            progress.interval = 6;
+        } else {
+            progress.interval = Math.round(progress.interval * progress.easeFactor);
+        }
+        
+        progress.easeFactor = Math.max(1.3, progress.easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+    }
+    
+    
+    const nextReview = new Date();
+    nextReview.setMinutes(nextReview.getMinutes() + progress.interval);
+    progress.nextReview = nextReview.toISOString();
+    
+    saveProgress();
+}
+
+
+function prepareCardQueue() {
+    const now = new Date();
+    cardQueue = flashcardsData.filter(card => {
+        const progress = cardProgress[card.id];
+        return new Date(progress.nextReview) <= now;
+    });
+    
+    
+    if (cardQueue.length === 0) {
+        cardQueue = [...flashcardsData];
+    }
+    
+    
+    cardQueue.sort(() => Math.random() - 0.5);
+    currentCardIndex = 0;
+}
+
+function showFlashcards() {
+    loadProgress();
+    prepareCardQueue();
+    
+    const section = document.getElementById('flashcards-section');
+    section.style.display = 'block';
+    
+    sessionStats = { correct: 0, incorrect: 0 };
+    updateSessionStats();
+    showCurrentCard();
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
+function showCurrentCard() {
+    if (currentCardIndex >= cardQueue.length) {
+        showCompletionMessage();
+        return;
+    }
+    
+    const card = cardQueue[currentCardIndex];
+    const frontText = document.getElementById('card-front-text');
+    const backText = document.getElementById('card-back-text');
+    const pinyinText = document.getElementById('card-pinyin-back');
+    
+    if (studyingChinese) {
+        frontText.textContent = card.zh;
+        backText.textContent = card.it;
+        pinyinText.textContent = card.pinyin || '';
+    } else {
+        frontText.textContent = card.it;
+        backText.textContent = card.zh;
+        pinyinText.textContent = card.pinyin || '';
+    }
+    
+    
+    document.getElementById('flashcard').classList.remove('flipped');
+    document.getElementById('flip-btn').style.display = 'inline-block';
+    document.getElementById('rating-buttons').style.display = 'none';
+    isFlipped = false;
+    
+    updateProgress();
+}
+
+function flipCard() {
+    document.getElementById('flashcard').classList.add('flipped');
+    document.getElementById('flip-btn').style.display = 'none';
+    document.getElementById('rating-buttons').style.display = 'block';
+    isFlipped = true;
+}
+
+function rateCard(quality) {
+    const card = cardQueue[currentCardIndex];
+    updateCardProgress(card.id, quality);
+    
+    
+    if (quality >= 3) {
+        sessionStats.correct++;
+    } else {
+        sessionStats.incorrect++;
+        
+        cardQueue.push(card);
+    }
+    
+    updateSessionStats();
+    currentCardIndex++;
+    showCurrentCard();
+}
+
+function updateSessionStats() {
+    document.getElementById('session-stats').textContent = 
+        `进度 Sessione: ${sessionStats.correct} 正确 corrette, ${sessionStats.incorrect} 错误 sbagliate`;
+}
+
+function updateProgress() {
+    const remaining = cardQueue.length - currentCardIndex;
+    const total = cardQueue.length;
+    const progress = ((currentCardIndex / total) * 100).toFixed(0);
+    
+    document.getElementById('cards-remaining').textContent = `剩余卡片 Carte rimanenti: ${remaining}`;
+    document.getElementById('progress-bar').style.width = progress + '%';
+}
+
+function showCompletionMessage() {
+    document.getElementById('flashcard').parentElement.style.display = 'none';
+    document.getElementById('flip-btn').style.display = 'none';
+    document.getElementById('rating-buttons').style.display = 'none';
+    document.getElementById('completion-message').style.display = 'block';
+    
+    const accuracy = sessionStats.correct + sessionStats.incorrect > 0 
+        ? Math.round((sessionStats.correct / (sessionStats.correct + sessionStats.incorrect)) * 100)
+        : 0;
+    
+    document.getElementById('final-stats').innerHTML = 
+        `你答对了 Hai risposto correttamente a <strong>${sessionStats.correct}</strong> 张卡片，共 carte su <strong>${sessionStats.correct + sessionStats.incorrect}</strong><br>` +
+        `(准确率 accuratezza: ${accuracy}%)`;
+}
+
+function resetSession() {
+    document.getElementById('completion-message').style.display = 'none';
+    document.getElementById('flashcard').parentElement.style.display = 'block';
+    prepareCardQueue();
+    sessionStats = { correct: 0, incorrect: 0 };
+    updateSessionStats();
+    showCurrentCard();
+}
+
+function setStudyLanguage(lang) {
+    studyingChinese = (lang === 'zh');
+    document.getElementById('study-zh').classList.toggle('active', studyingChinese);
+    document.getElementById('study-it').classList.toggle('active', !studyingChinese);
+    if (cardQueue.length > 0) {
+        showCurrentCard();
+    }
+}
+</script>
+
+
+
+<script>
+function toggleLanguage() {
+    const zhContent = document.getElementById('content-zh');
+    const itContent = document.getElementById('content-it');
+    const btn = document.getElementById('lang-toggle');
+    
+    if (zhContent && itContent) {
+        if (zhContent.style.display === 'none') {
+            zhContent.style.display = 'block';
+            itContent.style.display = 'none';
+            btn.textContent = 'Versione italiana';
+        } else {
+            zhContent.style.display = 'none';
+            itContent.style.display = 'block';
+            btn.textContent = '中文版本';
+        }
+    }
+}
+</script>
+
+    </main>
+</body>
+</html>

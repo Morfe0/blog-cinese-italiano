@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - 随想</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="site-title">随想</h1>
+        <p class="site-subtitle">pensieri sparsi</p>
+        
+        <nav class="nav">
+            <a href="/" >Home</a>
+            <a href="/about" class="active">About</a>
+        </nav>
+    </header>
+
+    <main>
+        
+<article>
+    <div class="post-date">0001-01-01</div>
+    <h1>About</h1>
+    
+    
+    <div id="content-zh" class="post-content">
+        <h2 id="关于我--chi-sono">关于我 / Chi sono</h2>
+<h3 id="中文">中文</h3>
+<p>你好！我是一个对语言和技术充满热情的开发者&hellip;</p>
+<h3 id="italiano">Italiano</h3>
+<p>Ciao! Sono uno sviluppatore appssssassionato&hellip;</p>
+
+    </div>
+    
+    
+    
+    
+    <div class="buttons">
+        
+        
+        
+    </div>
+</article>
+
+
+
+
+
+<script>
+function toggleLanguage() {
+    const zhContent = document.getElementById('content-zh');
+    const itContent = document.getElementById('content-it');
+    const btn = document.getElementById('lang-toggle');
+    
+    if (zhContent && itContent) {
+        if (zhContent.style.display === 'none') {
+            zhContent.style.display = 'block';
+            itContent.style.display = 'none';
+            btn.textContent = 'Versione italiana';
+        } else {
+            zhContent.style.display = 'none';
+            itContent.style.display = 'block';
+            btn.textContent = '中文版本';
+        }
+    }
+}
+</script>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+baseURL = 'https://morfe.me/'
+languageCode = 'zh'
+title = '随想'
+defaultContentLanguage = 'zh'
+
+[params]
+  subtitle = "pensieri sparsi"
+  author = "Il tuo nome"
+  description = "Un blog bilingue dove condivido riflessioni sparse tra codice e lingue"
+  
+[languages]
+  [languages.zh]
+    weight = 1
+    languageName = "中文"
+  [languages.it]
+    weight = 2
+    languageName = "Italiano"
