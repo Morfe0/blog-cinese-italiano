@@ -86,7 +86,9 @@
             </div>
             <div class="flashcard-face flashcard-back">
                 <div id="card-back-text" class="flashcard-text"></div>
+                <div id="card-zh-back" class="flashcard-chinese" style="font-size: 32px; color: #000; margin-bottom: 5px; font-family: Georgia, 'Noto Sans SC', serif;"></div>
                 <div id="card-pinyin-back" class="flashcard-pinyin"></div>
+                <div id="card-example-back" class="flashcard-example"></div>
             </div>
         </div>
     </div>
@@ -139,7 +141,7 @@ const flashcardsData = [
         "zh": "{{ $card.zh }}",
         "it": "{{ $card.it }}",
         "pinyin": "{{ $card.pinyin }}",
-        "example": "{{ $card.example | default "" }}"
+        "example": {{ if $card.example }}"{{ $card.example }}"{{ else }}null{{ end }}
     }
     {{ end }}
 ];
@@ -240,23 +242,51 @@ function showCurrentCard() {
         return;
     }
     
+    // Fix del bug: resetta la carta PRIMA di mostrare il contenuto
+    const flashcard = document.getElementById('flashcard');
+    flashcard.style.transition = 'none'; // Disabilita temporaneamente l'animazione
+    flashcard.classList.remove('flipped');
+    
+    // Forza il browser a fare il reflow
+    void flashcard.offsetWidth;
+    
+    // Riabilita l'animazione
+    flashcard.style.transition = '';
+    
     const card = cardQueue[currentCardIndex];
     const frontText = document.getElementById('card-front-text');
     const backText = document.getElementById('card-back-text');
     const pinyinText = document.getElementById('card-pinyin-back');
+    const exampleText = document.getElementById('card-example-back');
+    const zhBackText = document.getElementById('card-zh-back');
+    
+    // Mostra sempre il carattere cinese sul retro
+    zhBackText.textContent = card.zh;
+    zhBackText.style.display = 'block';
+    console.log('Carattere cinese sul retro:', card.zh); // Debug
     
     if (studyingChinese) {
         frontText.textContent = card.zh;
         backText.textContent = card.it;
+        backText.style.display = 'block';
         pinyinText.textContent = card.pinyin || '';
+        pinyinText.style.display = card.pinyin ? 'block' : 'none';
     } else {
         frontText.textContent = card.it;
-        backText.textContent = card.zh;
+        backText.style.display = 'none'; // Nascondi la traduzione quando studi italiano
         pinyinText.textContent = card.pinyin || '';
+        pinyinText.style.display = card.pinyin ? 'block' : 'none';
+    }
+    
+    // Mostra l'esempio sul retro se presente
+    if (card.example) {
+        exampleText.textContent = card.example;
+        exampleText.style.display = 'block';
+    } else {
+        exampleText.style.display = 'none';
     }
     
     // Reset stato
-    document.getElementById('flashcard').classList.remove('flipped');
     document.getElementById('flip-btn').style.display = 'inline-block';
     document.getElementById('rating-buttons').style.display = 'none';
     isFlipped = false;

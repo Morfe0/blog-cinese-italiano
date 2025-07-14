@@ -193,11 +193,11 @@ button.primary:hover {
     border-top: 1px solid #ccc;
 }
 
-/* Flashcard */
+/* Flashcard - ALTEZZA AUMENTATA */
 .flashcard-container {
     perspective: 1000px;
     width: 100%;
-    height: 280px;
+    height: 360px;
     margin: 30px 0;
 }
 
@@ -239,10 +239,28 @@ button.primary:hover {
     margin-bottom: 10px;
 }
 
+.flashcard-chinese {
+    font-size: 42px;
+    color: #000;
+    margin-bottom: 5px;
+    font-family: Georgia, 'Noto Sans SC', serif;
+}
+
 .flashcard-pinyin {
     font-size: 18px;
     color: #666;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin-bottom: 10px;
+}
+
+.flashcard-example {
+    font-size: 16px;
+    color: #444;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 10px;
+    line-height: 1.4;
 }
 
 /* Mobile */
@@ -256,8 +274,20 @@ button.primary:hover {
         font-size: 32px;
     }
     
+    .flashcard-container {
+        height: 380px;
+    }
+    
     .flashcard-text {
         font-size: 28px;
+    }
+    
+    .flashcard-chinese {
+        font-size: 32px;
+    }
+    
+    .flashcard-example {
+        font-size: 14px;
     }
     
     button {
@@ -286,6 +316,7 @@ button.primary:hover {
         }
     }
 }
+
 /* Bottoni flashcard bilingui */
 button small {
     display: block;
