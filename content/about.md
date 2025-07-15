@@ -15,7 +15,7 @@ menu: "main"
 如果大家有任何有趣的工作机会或想法，随时欢迎联系我。我总是乐于探索和讨论。
 
 联系方式:  
-https://www.linkedin.com/in/erick-calabro/
+ping@morfe.me
 
 
 ### Italiano  
@@ -26,4 +26,4 @@ Ora che ci siamo tolti i convenevoli chi sono è una domanda difficile a cui ris
 
 
 Questi sono i miei contatti nel caso aveste offerte di lavoro, sono sempre aperto ad esplorare idee ed opportunità interessanti:  
-https://www.linkedin.com/in/erick-calabro/
+ping@morfe.me
